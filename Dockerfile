@@ -1,0 +1,10 @@
+FROM python:3-slim
+
+COPY requirements.txt directions.py /code/
+
+RUN pip install \
+    --upgrade \
+    --no-cache \
+    --requirement /code/requirements.txt
+
+ENTRYPOINT '/code/directions.py'
